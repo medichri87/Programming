@@ -239,9 +239,10 @@ class DLinkedList:
         if current == self.first:
             if self.first.next is None:
                 self.last = node
+            else:
+                self.first.next.previous = node
             node.next = self.first.next
             node.previous = self.first
-            self.first.next.previous = node
             self.first.next = node
         elif current == self.last:
             node.next = None
