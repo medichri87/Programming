@@ -9,7 +9,7 @@ This file contains personal implementations of common data structures such as:
 5. Stack implemented as #4
 6. Queue implemented as #4
 7. Heap
-8. Tree
+8. Tree 
 """
 
 
