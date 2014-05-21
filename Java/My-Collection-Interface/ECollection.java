@@ -69,7 +69,7 @@ public interface ECollection<E> {
     /**
      * Pass the current Collection off to an Object array
      *
-     * @return an Object array consisting of the value found within the Collection
+     * @return an Object array consisting of all the values found within the Collection
      */
     Object[] toArray ();
 
