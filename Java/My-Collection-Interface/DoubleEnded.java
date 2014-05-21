@@ -4,7 +4,7 @@ package ADT;
  * Package: ADT <p>
  * Author: Chris Medina <p>
  * Date: 3/25/2014 <p>
- * DoubleEnded interface allows implentating classes to insert and remove elements in the list at both ends.
+ * DoubleEnded interface allows implentating classes to retrieve, insert, and remove elements in the list at both ends.
  */
 public interface DoubleEnded<E> extends ECollection<E> {
     /**
