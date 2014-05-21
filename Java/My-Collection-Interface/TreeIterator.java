@@ -4,7 +4,7 @@ package ADT;
  * Package: ADT <p>
  * Author: Chris Medina <p>
  * Date: 3/27/2014 <p>
- * Class Purpose:
+ * TreeIterator interface provides for bi-directional traversal of a Binary Search Tree. *Not entirely operational
  */
 public interface TreeIterator<E> extends EIterator<E> {
     /**
