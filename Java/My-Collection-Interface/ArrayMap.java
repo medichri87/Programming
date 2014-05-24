@@ -22,6 +22,10 @@ public class ArrayMap<K, V> implements IMap<K, V> {
         array = new DataItem[DEFAULT_MAX_SIZE];
     }
 
+    public ArrayMap () {
+        this(10);
+    }
+
     /**
      * Determine is the array has reached the current limit
      *
@@ -84,7 +88,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     public EList<V> values () {
         EList<V> set = new EArrayList<>();
         for (int i = 0; i < size; i++) {
-            set.add(array[i].value);
+            set.add(array[i].getValue());
         }
         return set;
     }
@@ -98,7 +102,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     public EList<K> keySet () {
         EList<K> set = new EArrayList<>();
         for (int i = 0; i < size; i++) {
-            set.add(array[i].key);
+            set.add(array[i].getKey());
         }
         return set;
     }
@@ -112,7 +116,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     @Override
     public boolean containsKey (K key) {
         for (int i = 0; i < size; i++) {
-            if (array[i].key.equals(key)) {
+            if (array[i].getKey().equals(key)) {
                 return true;
             }
         }
@@ -128,7 +132,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     @Override
     public boolean containsValue (V value) {
         for (int i = 0; i < size; i++) {
-            if (array[i].value.equals(value)) {
+            if (array[i].getValue().equals(value)) {
                 return true;
             }
         }
@@ -144,7 +148,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     @Override
     public V get (K key) {
         for (int i = 0; i < size; i++) {
-            if (array[i].key.equals(key)) {
+            if (array[i].key == key) {
                 return array[i].value;
             }
         }
@@ -152,7 +156,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     }
 
     /**
-     * Add this key-value pair to the ADT.IMap
+     * Add this key-value pair to the ADT.IMap. No null values are allowed. If a key already exists, we update it.
      *
      * @param key   the key to insert
      * @param value the value to insert
@@ -161,11 +165,21 @@ public class ArrayMap<K, V> implements IMap<K, V> {
     public void put (K key, V value) {
         if (key == null)
             return;
-        ensureCapacity();
-        DataItem<K, V> item = new DataItem<>(key, value);
-        if (containsKey(key))
+        else if (containsKey(key)) {
+            DataItem<K, V> temp = find(key);
+            temp.setValue(value);
             return;
-        array[size++] = item;
+        }
+        ensureCapacity();
+        array[size++] = new DataItem<>(key, value);
+    }
+
+    public DataItem<K, V> find (K key) {
+        for (int i = 0; i < size(); i++) {
+            if (array[i].getKey().equals(key))
+                return array[i];
+        }
+        throw new NoSuchElementException();
     }
 
     /**
@@ -277,7 +291,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
          */
         @Override
         public K getKey () {
-            return null;
+            return key;
         }
 
         /**
@@ -287,7 +301,7 @@ public class ArrayMap<K, V> implements IMap<K, V> {
          */
         @Override
         public V getValue () {
-            return null;
+            return value;
         }
 
         @Override
