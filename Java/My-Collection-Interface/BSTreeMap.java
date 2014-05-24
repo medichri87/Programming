@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 /**
  * Created by Chris Medina on 5/23/2014.
- * <p>Purpose: A binary search tree implementation of my IMap interface</p>
+ * <p>Purpose: A binary search tree implementation of the IMap interface</p>
  */
 public class BSTreeMap<K, V> implements IMap<K, V> {
 
@@ -131,16 +131,21 @@ public class BSTreeMap<K, V> implements IMap<K, V> {
     }
 
     /**
-     * Add this key-value pair to the TreeMap
+     * Add this key-value pair to the TreeMap. Nulls are not permitted.
+     * If a key is already in existence, this will update it.
      *
      * @param key   the key to insert
      * @param value the value to insert
      */
     @Override
     public void put (K key, V value) {
-        if (containsKey(key) || key == null)
+        if (key == null)
             return;
-
+        else if (containsKey(key)) {
+            Node<K, V> node = find(key);
+            node.setValue(value);
+            return;
+        }
         boolean isLeft = false;
         Node<K, V> curr = root, parent = root;
         size++;
@@ -157,7 +162,6 @@ public class BSTreeMap<K, V> implements IMap<K, V> {
                     isLeft = false;
                 }
             }
-
             Node<K, V> insert = new Node<>(null, key, value, null, parent);
             if (isLeft)
                 parent.left = insert;
@@ -262,7 +266,7 @@ public class BSTreeMap<K, V> implements IMap<K, V> {
 
     public void preOrderDisplay (Node<K, V> root) {
         if (root != null) {
-            nodes.add(root);
+            System.out.print(root + " ");
             preOrderDisplay(root.left);
             preOrderDisplay(root.right);
         }
@@ -275,6 +279,7 @@ public class BSTreeMap<K, V> implements IMap<K, V> {
     public void clear () {
         size = 0;
         root = null;
+        nodes.clear();
     }
 
     /**
