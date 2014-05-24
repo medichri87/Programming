@@ -90,15 +90,20 @@ public class LinkedMap<K, V> implements IMap<K, V> {
     }
 
     /**
-     * Add this key-value pair to the ADT.LinkedMap
+     * Add this key-value pair to the ADT.LinkedMap. If key already exists, we simply update it.
      *
      * @param key   the key to insert
      * @param value the value to insert
      */
     @Override
     public void put (K key, V value) {
-        if (containsKey(key) || key == null)
+        if (key == null)
             return;
+        else if (containsKey(key)) {
+            Node<K, V> temp = find(key);
+            temp.setValue(value);
+            return;
+        }
         insertLast(key, value);
     }
 
@@ -235,6 +240,20 @@ public class LinkedMap<K, V> implements IMap<K, V> {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    /**
+     * Retrive the Node associated with this key
+     *
+     * @param key the key to search for
+     * @return the Node assoicated with this key
+     */
+    public Node<K, V> find (K key) {
+        for (Node<K, V> f = first; f != null; f = f.next) {
+            if (f.getKey().equals(key))
+                return f;
+        }
+        throw new NoSuchElementException();
     }
 
     /**
