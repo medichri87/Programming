@@ -16,12 +16,12 @@ namespace OOP
         private E[] array;
         private int max_size;
         
-        public int size { get; private set; }
+        public int Size { get; private set; }
 
         public Queue (int max) {
             this.max_size = max;
             this.array = new E[max];
-            this.size = 0;
+            this.Size = 0;
         }
 
         public Queue ()
@@ -34,7 +34,7 @@ namespace OOP
         /// </summary>
         /// <returns>true, if it has no items</returns>
         public bool isEmpty () {
-            return (size == 0);
+            return (Size == 0);
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace OOP
         /// </summary>
         /// <returns>true, if is full. Once reached, the array dynamically grows</returns>
         public bool isFull () {
-            return (size == max_size);
+            return (Size == max_size);
         }
 
         private void ensureCapacity () {
@@ -58,7 +58,7 @@ namespace OOP
         /// <param name="item">the item to append</param>
         public void enqueue (E item) {
             ensureCapacity();
-            array[size++] = item;
+            array[Size++] = item;
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace OOP
 
             Array.Resize(ref array, array.Length - 1);
 
-            size--;
+            Size--;
             return temp;
         }
 
@@ -93,8 +93,8 @@ namespace OOP
         public override string ToString () {
             StringBuilder sb = new StringBuilder("[");
 
-            for (int i = 0; i < size; i++) {
-                if (i < size - 1) {
+            for (int i = 0; i < Size; i++) {
+                if (i < Size - 1) {
                     sb.Append(array[i] + ", ");
                 }
                 else {
