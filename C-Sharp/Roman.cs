@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 namespace OOP
 {
     /// <summary>
+    /// Date: 5-25-2014
     /// Utility class for converting Roman numerals to integers and integers to Roman numerals
     /// </summary>
-    class Roman
+    public class Roman
     {
-        private String roman;
-        private int value;
+        public String Title { get; private set; }
+        public int Value { get; private set; }
 
-        private static IList<Roman> basePairs;
-        private static IList<KeyValuePair<String, int>> allPairs;
+        private static IList<Roman> BasePairs;
+        private static IList<KeyValuePair<String, int>> AllPairs;
 
         private static Roman ONE = new Roman("I", 1);
         private static Roman FOUR = new Roman("IV", 4);
@@ -31,60 +32,53 @@ namespace OOP
         private static Roman NINE_HUNDRED = new Roman("CM", 900);
         private static Roman ONE_THOUSAND = new Roman("C", 1000);
 
-        static Roman() {
-            basePairs = new List<Roman>();
-            allPairs = new List<KeyValuePair<String, int>>();
+        static Roman () {
+            BasePairs = new List<Roman>();
+            AllPairs = new List<KeyValuePair<String, int>>();
 
-            basePairs.Add(ONE);
-            basePairs.Add(FOUR);
-            basePairs.Add(FIVE);
-            basePairs.Add(NINE);
-            basePairs.Add(TEN);
-            basePairs.Add(FORTY);
-            basePairs.Add(FIFTY);
-            basePairs.Add(NINETY);
-            basePairs.Add(ONE_HUNDRED);
-            basePairs.Add(FOUR_HUNDRED);
-            basePairs.Add(FIVE_HUNDRED);
-            basePairs.Add(NINE_HUNDRED);
-            basePairs.Add(ONE_THOUSAND);
+            BasePairs.Add(ONE);
+            BasePairs.Add(FOUR);
+            BasePairs.Add(FIVE);
+            BasePairs.Add(NINE);
+            BasePairs.Add(TEN);
+            BasePairs.Add(FORTY);
+            BasePairs.Add(FIFTY);
+            BasePairs.Add(NINETY);
+            BasePairs.Add(ONE_HUNDRED);
+            BasePairs.Add(FOUR_HUNDRED);
+            BasePairs.Add(FIVE_HUNDRED);
+            BasePairs.Add(NINE_HUNDRED);
+            BasePairs.Add(ONE_THOUSAND);
 
             //build full list from 1-4000 for converting String input to Roman values
             for (int i = 1; i <= 4000; i++)
-                allPairs.Add(new KeyValuePair<string, int>(IntToRoman(i), i));
+                AllPairs.Add(new KeyValuePair<string, int>(IntToRoman(i), i));
         }
 
-        private Roman(String roman, int value) {
-            this.roman = roman;
-            this.value = value;
+        private Roman (String roman, int value) {
+            this.Title = roman;
+            this.Value = value;
         }
 
-        private String getRoman() {
-            return this.roman;
-        }
-
-        private int getValue() {
-            return this.value;
-        }
 
         /// <summary>
         /// Convert this number to a Roman numeral string
         /// </summary>
         /// <param name="num">the number to convert to a numeral</param>
         /// <returns>Roman numeral as a String</returns>
-        public static String IntToRoman(int num) {
+        public static String IntToRoman (int num) {
             if (num < 0 || num > 4000)
                 throw new ArgumentException("Number must be between 0 and 4000, inclusive");
             else {
                 if (num == 0) return "0";
                 StringBuilder sb = new StringBuilder();
                 while (num > 0) {
-                    int index = basePairs.Count - 1;
-                    while (index > 0 && basePairs.ElementAt(index).getValue() > num) {
+                    int index = BasePairs.Count - 1;
+                    while (index > 0 && BasePairs.ElementAt(index).Value > num) {
                         index--;
                     }
-                    num -= basePairs.ElementAt(index).getValue();
-                    sb.Append(basePairs.ElementAt(index).getRoman());
+                    num -= BasePairs.ElementAt(index).Value;
+                    sb.Append(BasePairs.ElementAt(index).Title);
                 }
 
                 return sb.ToString();
@@ -96,15 +90,16 @@ namespace OOP
         /// </summary>
         /// <param name="roman">the Roman numeral to convert to int form</param>
         /// <returns>an int which represents the value of the argument Roman numeral, or -1 if not found</returns>
-        public static int RomanToInt(String roman) {
+        public static int RomanToInt (String roman) {
             int result = -1;
             //Java = for(Map.Entry<String, Integer> entry : map)...
-            foreach (KeyValuePair<String, int> entry in allPairs) {
+            foreach (KeyValuePair<String, int> entry in AllPairs) {
                 if (entry.Key.Equals(roman))
                     return entry.Value;
             }
             return result;
         }
+
 
     }
 }
