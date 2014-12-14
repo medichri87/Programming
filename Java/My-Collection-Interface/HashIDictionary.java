@@ -127,6 +127,9 @@ public class HashIDictionary<K, V> extends AbstractIDictionary<K, V> implements 
         return temp;
     }
 
+    /*
+    Node represents an individual "entry" in a Dictionary. Each entry-node is a Key-Value pairing.
+    */
     private static class Node<K, V> implements IDictionary.KeyValuePair<K, V> {
 
         Node<K, V> next;
