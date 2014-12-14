@@ -28,7 +28,7 @@ public interface IEnumerator<E> {
      * move forward to
      *
      * @return the next item in the iterator
-     */
+     */ 
     E next();
 
     /**
