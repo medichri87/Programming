@@ -14,7 +14,6 @@ import java.util.Objects;
  * are greater than the node. Duplicates are typically not permitted.
  */
 public class BinarySearchITree<E> extends AbstractITree<E> implements ITree<E> {
-
     private Node<E> root;
     private int size;
     private final IList<Node<E>> list;
