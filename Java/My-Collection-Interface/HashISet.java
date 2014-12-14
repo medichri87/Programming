@@ -15,8 +15,6 @@ import java.util.NoSuchElementException;
 public class HashISet<E> extends AbstractISet<E> implements ISet<E> {
 
     private IDictionary<E, Object> dictionary;
-
-    //dummy, sentinel value useful for inserting a throw-away value
     private static final Object DUMMY = new Object();
 
     public HashISet() {
