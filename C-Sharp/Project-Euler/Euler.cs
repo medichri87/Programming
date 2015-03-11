@@ -6,6 +6,10 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+* Author: Chris Medina
+* Date: 3-2015
+*/
 namespace Euler
 {
     public static class Euler
