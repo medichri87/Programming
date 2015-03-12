@@ -3,22 +3,118 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-/*
-* Author: Chris Medina
-* Date: 3-2015
-*/
 namespace Euler
 {
+    /// <summary>
+    /// Author: Chris Medina
+    /// Date: 3-12-2015
+    /// </summary>
     public static class Euler
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(SmallestMultiple());
+            Console.WriteLine(SummmationOfPrimes(2000000));
 
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// <url>https://projecteuler.net/problem=10</url>
+        /// </summary>
+        public static long SummmationOfPrimes(int upTo)
+        {
+            IList<long> primes = new List<long>();
+            for (int i = 2; i < upTo; i++)
+            {
+                if (IsPrime(i))
+                    primes.Add(i);
+            }
+
+            return primes.Sum();
+        }
+
+        /// <summary>
+        /// <url>https://projecteuler.net/problem=9</url>
+        /// </summary>
+        public static int PythagoreanTriplet(int n)
+        {
+            for (int a = 1; a < 1000; a++)
+            {
+                for (int b = a + 1; b < 1000; b++)
+                {
+                    int cSq = ((a * a) + (b * b));
+                    int cRt = (int)Math.Sqrt(cSq);
+
+                    if ((a + b + cRt == n) && ((a * a) + (b * b) == (cRt * cRt)))
+                    {
+                        Console.WriteLine("{0} | {1} | {2} = {3}", a, b, cRt, (a * b * cRt));
+                        return ((a * b * cRt));
+                    }
+                }
+            }
+            return -1;
+        }
+
+        /// <summary>
+        /// <url>https://projecteuler.net/problem=8</url>
+        /// </summary>
+        public static long LargestInSeries(int n)
+        {
+            String file = File.ReadAllText("C:\\Users\\cj\\Desktop\\nums.txt");
+            Regex regex = new Regex(Environment.NewLine);
+            String edit = regex.Replace(file, "");
+
+            long prevProduct = 0;
+            for (int i = 0; i < edit.Length - n; i++)
+            {
+                String tempString = edit.Substring(i, n);
+                long tempProduct = tempString.Aggregate<char, long>(1, (l, c) => (int)(c - '0') * l);
+
+                if (tempProduct > prevProduct)
+                {
+                    Console.WriteLine(tempString);
+                    prevProduct = tempProduct;
+                }
+            }
+
+            return prevProduct;
+        }
+
+        /// <summary>
+        /// <url>https://projecteuler.net/problem=7</url>
+        /// </summary>
+        public static long nThPrime(int n)
+        {
+            IList<long> primes = new List<long>();
+            for (int i = 2; i < 1000000; i++)
+            {
+                if (IsPrime(i))
+                    primes.Add(i);
+            }
+
+            return (n > primes.Count ? -1 : primes[n - 1]);
+        }
+
+        /// <summary>
+        /// <url>https://projecteuler.net/problem=6</url>
+        /// </summary>
+        public static long SumSquareDifference(int upTo)
+        {
+
+            long sum = 0;
+            for (int i = 1; i <= upTo; i++)
+            {
+                sum += (int)Math.Pow(i, 2);
+            }
+
+            long square = (long)Math.Pow(new List<int>(Enumerable.Range(1, upTo)).Sum(), 2);
+
+            return (square - sum);
         }
 
         /// <summary>
@@ -142,6 +238,8 @@ namespace Euler
         /// <returns>true, if number is prime</returns>
         private static bool IsPrime(long num)
         {
+            if (num < 2)
+                return false;
             for (long i = 2; i <= (long)Math.Sqrt(num); i++)
             {
                 if ((i != num) && (num % i == 0))
