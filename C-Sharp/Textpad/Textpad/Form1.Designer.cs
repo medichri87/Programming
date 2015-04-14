@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Forms;
@@ -90,6 +90,9 @@ namespace Textpad
             // txt_input
             // 
             this.txt_input.AcceptsTab = true;
+            this.txt_input.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_input.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_input.Location = new System.Drawing.Point(0, 68);
@@ -481,6 +484,7 @@ namespace Textpad
             // 
             // lbl_date
             // 
+            this.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_date.AutoSize = true;
             this.lbl_date.Location = new System.Drawing.Point(12, 550);
             this.lbl_date.Name = "lbl_date";
@@ -492,6 +496,7 @@ namespace Textpad
             // 
             // lbl_wordCount
             // 
+            this.lbl_wordCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_wordCount.AutoSize = true;
             this.lbl_wordCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_wordCount.Location = new System.Drawing.Point(256, 550);
@@ -503,6 +508,7 @@ namespace Textpad
             // 
             // lbl_currentLine
             // 
+            this.lbl_currentLine.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_currentLine.AutoSize = true;
             this.lbl_currentLine.Location = new System.Drawing.Point(683, 550);
             this.lbl_currentLine.Name = "lbl_currentLine";
@@ -513,6 +519,7 @@ namespace Textpad
             // 
             // lbl_count
             // 
+            this.lbl_count.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_count.AutoSize = true;
             this.lbl_count.Location = new System.Drawing.Point(303, 550);
             this.lbl_count.Name = "lbl_count";
@@ -523,6 +530,7 @@ namespace Textpad
             // 
             // lbl_current
             // 
+            this.lbl_current.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_current.AutoSize = true;
             this.lbl_current.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_current.Location = new System.Drawing.Point(609, 550);
@@ -534,6 +542,7 @@ namespace Textpad
             // 
             // lbl_letterCount
             // 
+            this.lbl_letterCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_letterCount.AutoSize = true;
             this.lbl_letterCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_letterCount.Location = new System.Drawing.Point(372, 550);
@@ -545,6 +554,7 @@ namespace Textpad
             // 
             // lbl_lineCounter
             // 
+            this.lbl_lineCounter.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_lineCounter.AutoSize = true;
             this.lbl_lineCounter.Location = new System.Drawing.Point(533, 550);
             this.lbl_lineCounter.Name = "lbl_lineCounter";
@@ -555,6 +565,7 @@ namespace Textpad
             // 
             // lbl_count2
             // 
+            this.lbl_count2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_count2.AutoSize = true;
             this.lbl_count2.Location = new System.Drawing.Point(420, 550);
             this.lbl_count2.Name = "lbl_count2";
@@ -565,6 +576,7 @@ namespace Textpad
             // 
             // lbl_lineCount
             // 
+            this.lbl_lineCount.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lbl_lineCount.AutoSize = true;
             this.lbl_lineCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_lineCount.Location = new System.Drawing.Point(491, 550);
