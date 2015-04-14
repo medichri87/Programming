@@ -1,0 +1,8 @@
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\bin\Debug\WindowsApplication.exe.config
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\bin\Debug\WindowsApplication.exe
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\bin\Debug\WindowsApplication.pdb
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\x86\Debug\Textpad.FormTextpad.resources
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\x86\Debug\TextEditor.Properties.Resources.resources
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\x86\Debug\TextEditor.csproj.GenerateResource.Cache
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\x86\Debug\WindowsApplication.exe
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\x86\Debug\WindowsApplication.pdb

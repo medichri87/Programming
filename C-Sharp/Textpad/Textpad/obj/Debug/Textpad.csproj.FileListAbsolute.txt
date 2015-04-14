@@ -1,0 +1,11 @@
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.FormTextpad.resources
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.Properties.Resources.resources
+C:\Users\cj\Documents\Visual Studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.csproj.GenerateResource.Cache
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\bin\Debug\Textpad.exe.config
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\bin\Debug\Textpad.exe
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\bin\Debug\Textpad.pdb
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.exe
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.pdb
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.FindForm.resources
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.csprojResolveAssemblyReference.cache
+C:\Users\cj\documents\visual studio 2012\Projects\Textpad\Textpad\obj\Debug\Textpad.ReplaceForm.resources

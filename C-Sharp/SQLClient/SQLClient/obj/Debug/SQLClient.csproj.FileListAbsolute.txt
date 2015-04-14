@@ -1,0 +1,8 @@
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\bin\Debug\SQLClient.exe.config
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\bin\Debug\SQLClient.exe
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\bin\Debug\SQLClient.pdb
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\obj\Debug\SQLClient.csprojResolveAssemblyReference.cache
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\obj\Debug\SQLClient.Properties.Resources.resources
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\obj\Debug\SQLClient.csproj.GenerateResource.Cache
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\obj\Debug\SQLClient.exe
+c:\users\cj\documents\visual studio 2012\Projects\SQLClient\SQLClient\obj\Debug\SQLClient.pdb
